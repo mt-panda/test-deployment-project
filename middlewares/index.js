@@ -3,8 +3,6 @@ export const auth = ( req, res, next ) => {
   console.log("Existing User: ", existingUser)
   console.log("Request.body: ", req.body)
   
-  console.log("Authentication Successful")
-  next();
   
   if (!req.body) {
     return res.status(400).json({
@@ -23,6 +21,7 @@ export const auth = ( req, res, next ) => {
       message: "User does not exist"
     })
   }
+
   console.log("Authentication Successful")
   next();
 }
